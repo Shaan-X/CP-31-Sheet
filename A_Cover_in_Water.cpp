@@ -17,7 +17,7 @@ int solve(){
         if(s[i] == '.' && s[i-1] == '.' && s[i+1] == '.') cons = true;
     }
     if(s[0] == '.') cell++;
-    if(s[n-1] == '.') cell++;
+    if(s[n-1] == '.' && n > 1) cell++;
 
     if(cons) return 2;
     return cell;
