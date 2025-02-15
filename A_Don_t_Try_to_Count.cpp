@@ -22,7 +22,7 @@ int solve() {
         }
         current += current;
         operations++;
-       // if()
+
     }
 
     if (current.find(s) != string::npos) {
