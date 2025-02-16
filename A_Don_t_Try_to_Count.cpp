@@ -17,9 +17,9 @@ int solve() {
 
     bool match_found = true;
     while (match_found) {
-        if (current.find(s) != string::npos) {
+        if (current.find(s) != string::npos) 
             return operations;
-        }
+
         current += current;
         operations++;
 
