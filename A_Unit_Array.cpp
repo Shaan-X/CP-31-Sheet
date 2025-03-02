@@ -10,16 +10,19 @@ int solve(){
     int n; cin >> n;
     int neg = 0, pos = 0;
     while(n--){
+
         int x; cin >> x;
+    
         if(x < 0) neg++;
         else pos++;
     }
-    if(pos - neg < 0){
-        return abs(pos - neg);
+    if(neg >= pos){
+        int x = ceil((neg - pos) / 2.0);
+        int rem = neg - x;
+        if(rem % 2 == 1) return x + 1;
+        return x;
     }
-    if(neg % 2 != 0) {
-        return 1;
-    }
+    if(neg % 2 == 1) return 1;
     return 0;
 }
 int main(void)
