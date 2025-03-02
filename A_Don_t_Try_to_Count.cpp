@@ -9,26 +9,19 @@ using namespace std;
 int solve() {
     int n, m;
     cin >> n >> m;
-    string x, s;
-    cin >> x >> s;
+    string str, res;
+    cin >> str >> res;
 
-    string current = x;
-    int operations = 0;
+    int oper = 0;
 
-    bool match_found = true;
-    while (match_found) {
-        if (current.find(s) != string::npos) {
-            return operations;
+    if (str.find(res) != string::npos) return oper;
+    
+    while (str.size() <= m * 2 || oper==0) {
+        str += str;
+        oper++;
+        if (str.find(res) != string::npos) {
+            return oper;
         }
-            
-
-        current += current;
-        operations++;
-
-    }
-
-    if (current.find(s) != string::npos) {
-        return operations;
     }
 
     return -1;
