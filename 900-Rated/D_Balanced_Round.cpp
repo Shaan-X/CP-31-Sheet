@@ -23,8 +23,8 @@ int solve(){
             count = 0;
         }
     }
-    cout <<  n - (max(ans,count) + 1) << endl;
-    return 0;
+    //cout <<  n - (max(ans,count) + 1) << endl;
+    return n - (max(ans,count) + 1);
 }
 int main(void)
 {
@@ -37,7 +37,7 @@ int main(void)
     for(int i = 1; i <= t; i++)
     {
         int ans = solve();
-     //   cout << ans << endl;
+        cout << ans << endl;
         //cout << (ans ? "YES" : "NO") << endl;
     //cout << "Case #" << i << ": " <<   << endl;
     }
