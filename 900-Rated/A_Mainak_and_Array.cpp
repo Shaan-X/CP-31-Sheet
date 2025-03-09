@@ -14,7 +14,7 @@ int solve(){
     int maxi = *max_element(arr.begin(), arr.end());
     int mini = *min_element(arr.begin(), arr.end());
     
-    return maxi - mini;
+    cout << maxi - mini << endl;
 }
 int main(void)
 {
@@ -27,7 +27,7 @@ int main(void)
     for(int i = 1; i <= t; i++)
     {
         int ans = solve();
-        cout << ans << endl;
+       // cout << ans << endl;
         //cout << (ans ? "YES" : "NO") << endl;
     //cout << "Case #" << i << ": " <<   << endl;
     }
