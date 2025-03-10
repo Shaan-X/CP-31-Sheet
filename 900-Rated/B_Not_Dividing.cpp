@@ -11,32 +11,15 @@ int solve(){
     int n; cin >> n;
     vector<int> arr(n);
     loop(i, 0, n) cin >> arr[i];
-   // if(arr[0] % 2 == 1) arr[0]++;
-    for(int i = 0; i < n - 1; i++){
-         if(arr[i] != 1){
-            if(i % 2 == 0){
-                if(arr[i] % 2 == 1) arr[i]++;
-               // if(arr[i+1] % arr[i] == 0) arr[i+1]--;
-            }
-            else{
-                if(arr[i] % 2 == 0) arr[i]++;
-                //if(arr[i+1] % arr[i] == 0) arr[i+1]--;
-            }
-        }
-        /* else{
-            if(i % 2 == 1){
-                arr[i] = 3;
-                if(arr[i+1] == 5) arr[i+1]--;
-            }
-            else{
-                arr[i]++;
-            }
-        }  */
-    //cout << arr[i] << " ";
-      
+   
+    for(int i = 0; i < n; i++){
+        if(arr[i] == 1) arr[i]++;
     }
-    //cout << endl;
-    if(arr[n-1] % arr[n-2] == 0) arr[n-1]++; 
+
+    for(int i = 0; i < n - 1; i++){     
+        if(arr[i+1] % arr[i] == 0) arr[i+1]++;
+    }
+
     loop(i, 0, n) cout << arr[i] << " ";
     cout << endl;
     return 0;
