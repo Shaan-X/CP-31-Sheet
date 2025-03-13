@@ -21,8 +21,12 @@ int solve(){
     for(int i = 0; i < n - 1; i++){
         if(a[i] != 0 && a[i+1] == 0) ans++;
     }
-    if(a[0] != 0 && ans >= 1) return ans + 1;
-    return max(ans, 1);
+    if(a[0] != 0 && ans >= 1){
+        cout << ans + 1 << endl;
+        return 0;
+    } 
+    cout << max(ans, 1) << endl;
+    return 0;
 }
 int main(void)
 {
@@ -35,7 +39,7 @@ int main(void)
     for(int i = 1; i <= t; i++)
     {
         int ans = solve();
-        cout << ans << endl;
+      //  cout << ans << endl;
         //cout << (ans ? "YES" : "NO") << endl;
     //cout << "Case #" << i << ": " <<   << endl;
     }
