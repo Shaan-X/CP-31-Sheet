@@ -9,24 +9,28 @@ using namespace std;
 
 int solve(){
     int n; cin >> n;
-    int zero = 0; 
+
     vector<int> a(n);
     loop(i,0,n) {
-        cin >> a[i];
-        if(a[i] == 0) zero++;
+        cin >> a[i];  
     }
-    if(zero == n) return 0;
 
     int ans = 0;
-    for(int i = 0; i < n - 1; i++){
-        if(a[i] != 0 && a[i+1] == 0) ans++;
+    bool zerofound = true;
+    for(int i = 0; i < n; i++){
+        if(a[i] > 0 && zerofound){
+            ans++;
+            zerofound = false;
+        }
+        else if(a[i] == 0){
+            zerofound = true;
+        }
+        else{
+            zerofound = false;
+        }
     }
-    if(a[0] != 0 && ans >= 1){
-        cout << ans + 1 << endl;
-        return 0;
-    } 
-    cout << max(ans, 1) << endl;
-    return 0;
+
+    return ans == 0 ? 0 : ans > 1 ? 2 : 1;
 }
 int main(void)
 {
@@ -39,7 +43,7 @@ int main(void)
     for(int i = 1; i <= t; i++)
     {
         int ans = solve();
-      //  cout << ans << endl;
+        cout << ans << endl;
         //cout << (ans ? "YES" : "NO") << endl;
     //cout << "Case #" << i << ": " <<   << endl;
     }
