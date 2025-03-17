@@ -13,6 +13,8 @@ int solve(){
     ll maxi = n / 4;
     ll rem4 = n % 4;
     ll rem6 = n % 6;
+
+    //galat hai change kar
     if(rem4 == 0 && rem6 == 0){
         cout << mini << " " << maxi << endl;
     }
