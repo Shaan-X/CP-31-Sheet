@@ -9,23 +9,19 @@ using namespace std;
 
 int solve(){
     ll n; cin >> n;
-    ll mini = n / 6;
-    ll maxi = n / 4;
-    ll rem4 = n % 4;
-    ll rem6 = n % 6;
+    ll mini = -1;
+    ll maxi = -1;
+   
+    if(n % 4 == 2 || n % 4 == 0) maxi =  n / 4;
+    if(n % 6 == 0) mini = n / 6;
+    if(n % 6 == 2 || n % 6 == 4) mini = (n / 6) + 1;
 
-    //galat hai change kar
-    //abhi v galat hai
-    if(rem4 == 0 && rem6 == 0){
-        cout << mini << " " << maxi << endl;
+    if(maxi == -1 || mini == -1 || n < 4) {
+        cout << -1 << endl;
+        return 0;
     }
-    else if(rem4 == 0 && rem6 != 0){
-        cout << maxi << " " << maxi << endl;
-    }
-    else if(rem4 != 0 && rem6 == 0) {
-        cout << mini << " " << mini << endl;
-    }
-    else cout << -1 << endl;
+
+    cout << mini << " " << maxi << endl;
     return 0;
 }
 int main(void)
