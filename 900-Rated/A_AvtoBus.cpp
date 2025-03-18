@@ -15,6 +15,7 @@ int solve(){
     ll rem6 = n % 6;
 
     //galat hai change kar
+    //abhi v galat hai
     if(rem4 == 0 && rem6 == 0){
         cout << mini << " " << maxi << endl;
     }
