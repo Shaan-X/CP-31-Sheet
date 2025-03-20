@@ -12,31 +12,28 @@ int solve(){
     vector<int> arr(n);
     loop(i , 0, n) cin >> arr[i];
 
-    /* int greats = 0;
-    bool notgood = false;
-    for(int i = 0; i < n - 1; i++){
-        if(arr[i] > arr[i+1]){
-            greats++;
-        }
-        if(arr[i] == 0 && i > 0) notgood = true;
-    }
-    if((greats == n - 1 || notgood) && n != 1) return -1; */
+    //start from the back say a[n-1] > a[n] --> reduce a[n-1] now a[n-1] < a[n]
+    //now say a[n-2] > a[n-1] < a[n]
+    //here just reducing a[n-2] will work & it will not affect the array as the resulting array will be
+    // a[n-2] < a[n-1] < a[n] --> cuz a[n-1] was already < a[n]
 
     int ans = 0;
-    bool found = true;
-    while(found){
-        found = false;
-        for(int i = 0; i < n - 1; i++){
+
+        for(int i = n - 2; i >= 0; i--){
             if(arr[i] >= arr[i+1]){
-                arr[i] = arr[i] / 2;
-                ans++;
-                found = true;
+                //keep reducing till it becomes less than arr[i+1]
+                while(arr[i] >= arr[i+1]){
+                    arr[i] = arr[i] / 2;
+                    ans++;
+                    if(arr[i] == 0) break;
+                }
             }
-            if(arr[i] == 0 && i > 0) return -1;
+            if(arr[i] == 0 && arr[i + 1] == 0){
+                ans = -1;
+                break;
+            }
         }
      
-    }
-    
     return ans;
 }
 int main(void)
