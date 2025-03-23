@@ -17,14 +17,15 @@ int solve(){
     
         same = max(same, freq[z]);
     }
-    //cout << same << " " ;
+   
     int ans = 0;
     while(n - same > same){
-        ans += same * 2;
+        ans++;
+        ans += same;
         same = same * 2;
     }
     ans += (n - same);
-    cout << ans << endl;
+    cout <<  (ans == 0 ? 0 : ans + 1) << endl;
     return 0;
 }
 int main(void)
