@@ -8,35 +8,29 @@ template<typename T>T gcd(T x, T y){if(y==0)return x;else return gcd(y,x%y);}
 using namespace std;
 
 bool solve(){
+    /* use long long for overflow */
     int a, b, c; cin >> a >> b >> c;
-    //cout << (ceil(7.00) == 7) << endl;
-    // cout << ceil(7.01) << endl;
-    bool ans = false;
-
-    int one = (b + abs (c - b)) / a;
-   // if((a * one - b) == (b - c)) ans = true;
-    if((b - a * one) == (c - b)) ans = true;
-   // if((a * one - b) == (c - b)) ans = true;
-   // if((b - a * one) == (b - c)) ans = true;
-
-    //double ONE = (double)(b + abs (c - b)) / a * 1.0;
-
-     int two = (a + c) / (2 * b);
-    if((b * two - a) == (c - b * two)) ans = true;
-    //double TWO = (double)(a + c) / 2.0 * b;
-
-    int three = (abs(b - a) + b) / c;
-    if((c * three - b) == (b - a)) ans = true; 
-    //double THREE = (double)(abs(b - a) + b) / c * 1.0;
-
-       // cout << one << " " << two << " " << three << endl;
-
    
-    //if(one == ceil(ONE)) ans = true;
-    //if(two == ceil(TWO)) ans = true;
-    //if(three == ceil(THREE)) ans = true;
+    ll a, b, c; cin >> a >> b >> c;
+   
+    bool ans = false;
+    ll one = (2 * b - c) / a;
+    if(one > 0){
+        if ((2 * b - c) % a == 0) ans = true;
+    } 
 
-    return ans;
+    ll two = (a + c) / (2 * b);
+    if(two > 0 ){
+        if((((a + c) / 2) % b == 0) && ((c - a) % 2 == 0)) ans = true;
+    } 
+   
+    ll three = (2 * b - a) / c;
+    if(three > 0 ){
+        if((2 * b - a) % c == 0) ans = true;
+    } 
+    if(ans) return 1;
+
+    return 0;
 }
 int main(void)
 {
