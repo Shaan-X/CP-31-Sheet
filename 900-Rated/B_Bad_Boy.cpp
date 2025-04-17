@@ -8,11 +8,29 @@ template<typename T>T gcd(T x, T y){if(y==0)return x;else return gcd(y,x%y);}
 using namespace std;
 
 int solve(){
-    int r, c, i, j; cin >> r >> c >> i >> j
-    if(i == 1){
-        
+    int r, c, i, j; cin >> r >> c >> i >> j;
+    if(c == 1){
+        if(i != 1 && i != r)  cout << 1 << " " << 1 << " " << r << " " << 1 << endl;
+        else if(i == 1) cout << r << " " << 1 << " " << r-1 << " " << 1 << endl;
+        else if(i == r) cout << 1 << " " << 1 << " " << 2 << " " << 1 << endl;
     }
-    
+    else if(r == 1){
+        if(j != 1 && j != r) cout << 1 << " " << 1 << " " << 1 << " " << c << endl;
+        else if(j == 1) cout << 1 << " " << c << " " << 1 << " " << c-1 << endl;
+        else if(i == r) cout << 1 << " " << 1 << " " << 1 << " " << 2 << endl;
+    }
+    else if(i == 1){
+        cout << r << " " << 1 << " " << r << " " << c << endl;
+    }
+    else if(j == 1){
+        cout << c  << " " << 1 << " " << r  << " " << c << endl;
+    }
+    else if(i == r){
+        cout << 1  << " " << 1 << " " << 1 << " " << c << endl;
+    }
+    else if(j == c){
+        cout << 1  << " " << 1 << " " << r << " " << 1 << endl;
+    }
     return 0;
 }
 int main(void)
@@ -26,7 +44,7 @@ int main(void)
     for(int i = 1; i <= t; i++)
     {
         int ans = solve();
-        cout << ans << endl;
+        //cout << ans << endl;
         //cout << (ans ? "YES" : "NO") << endl;
     //cout << "Case #" << i << ": " <<   << endl;
     }
