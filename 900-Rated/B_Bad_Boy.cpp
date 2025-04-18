@@ -9,7 +9,8 @@ using namespace std;
 
 int solve(){
     int r, c, i, j; cin >> r >> c >> i >> j;
-    if(c == 1){
+    if(r == 1 && c == 1) cout << 1 << " " << 1 << " " << 1 << " " << 1 << endl;
+    else if(c == 1){
         if(i != 1 && i != r)  cout << 1 << " " << 1 << " " << r << " " << 1 << endl;
         else if(i == 1) cout << r << " " << 1 << " " << r-1 << " " << 1 << endl;
         else if(i == r) cout << 1 << " " << 1 << " " << 2 << " " << 1 << endl;
@@ -23,13 +24,16 @@ int solve(){
         cout << r << " " << 1 << " " << r << " " << c << endl;
     }
     else if(j == 1){
-        cout << c  << " " << 1 << " " << r  << " " << c << endl;
+        cout << 1  << " " << 1 << " " << r  << " " << c << endl;
     }
     else if(i == r){
-        cout << 1  << " " << 1 << " " << 1 << " " << c << endl;
+        cout << 1  << " " << 1 << " " << r << " " << c << endl;
     }
     else if(j == c){
         cout << 1  << " " << 1 << " " << r << " " << 1 << endl;
+    }
+    else{     
+        cout << 1 << " " << 1 << " " << r << " " << c << endl;
     }
     return 0;
 }
