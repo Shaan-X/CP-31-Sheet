@@ -9,6 +9,10 @@ using namespace std;
 
 int solve(){
     int r, c, i, j; cin >> r >> c >> i >> j;
+
+    //al these not necessary
+    // ans is simply (1,1) (r,c) or (r,1) (1,c)
+    //any one of the ans above just print it & it works
     if(r == 1 && c == 1) cout << 1 << " " << 1 << " " << 1 << " " << 1 << endl;
     else if(c == 1){
         if(i != 1 && i != r)  cout << 1 << " " << 1 << " " << r << " " << 1 << endl;
